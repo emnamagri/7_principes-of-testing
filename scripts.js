@@ -3,9 +3,9 @@ function verifierReponses() {
     let score = 0;
 
     const reponsesCorrectes = {
-        q1: 'Bleu',
+        q1: 'Blue',
         q2: '4',
-        q3: 'Baleine Bleue' // Défaut : Réponse "Baleine Bleue" manquante
+        q3: 'tt' // Défaut : Réponse "Baleine Bleue" manquante
     };
 
     const formulaire = document.forms['quiz-form'];
@@ -18,11 +18,12 @@ function verifierReponses() {
     resultat.style.transition = "all 0.3s ease-in-out";
 
     if (score === 3) {
-        resultat.textContent = "Félicitations ! Vous avez répondu correctement à toutes les questions.";
+        resultat.textContent = "Congratulations! You have answered all the questions correctly.";
         resultat.classList.remove("error-animation");
         resultat.style.color = "green";
     } else {
-        resultat.textContent = `Vous avez ${score} réponse(s) correcte(s) sur 3.`;
+        resultat.textContent = `You have ${score} correct answer(s) out of 3.
+        `;
         resultat.classList.add("error-animation");
         resultat.style.color = "red";
     }
