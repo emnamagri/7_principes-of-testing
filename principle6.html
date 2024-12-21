@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Principe 6 - Les tests dépendent du contexte</title>
+    <title>Principle 6 - Tests Depend on Context</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,39 +15,71 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: #f8f9fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #007bff, #6c757d);
+            color: #fff;
+            padding: 50px 0;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+        footer {
+            background: #343a40;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
 
 <header class="text-center p-5 bg-light">
-    <h1 data-aos="fade-down">Principe 6 : Les tests dépendent du contexte</h1>
-    <p class="lead" data-aos="fade-up">Comprenez ce principe grâce à cet exemple interactif.</p>
+    <h1 data-aos="fade-down">Principle 6: Tests Depend on Context</h1>
+    <p class="lead" data-aos="fade-up">Understand this principle through this interactive example.</p>
 </header>
 
 <section class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6" data-aos="fade-up">
             <div class="card p-4">
-                <h2 class="mb-3">Tests Contextuels</h2>
-                <p>Ce formulaire se comporte différemment en fonction de l'appareil utilisé (ordinateur ou mobile). Redimensionnez la fenêtre ou utilisez un autre appareil pour voir les changements.</p>
+                <h2 class="mb-3">Contextual Tests</h2>
+                <p>This form behaves differently depending on the device used (desktop or mobile). Resize the window or use another device to see the changes.</p>
 
-                <!-- Éléments de formulaire réactifs -->
+                <!-- Responsive form elements -->
                 <form id="context-form">
                     <div class="mb-3">
-                        <label for="name">Nom :</label>
-                        <input type="text" id="name" class="form-control" placeholder="Entrez votre nom">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your name">
                     </div>
                     <div class="mb-3">
-                        <label for="email">Email :</label>
-                        <input type="email" id="email" class="form-control" placeholder="Entrez votre email">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email">
                     </div>
-                    <!-- Composant contextuel basé sur le type d'appareil -->
+                    <!-- Contextual component based on device type -->
                     <div id="contextual-component" class="mb-3">
-                        <!-- Ce contenu changera en fonction de la taille de l'écran -->
+                        <!-- This content will change depending on screen size -->
                     </div>
                 </form>
 
-                <!-- Bouton Retour à la Page Principale -->
-                <a href="index.html" class="btn btn-secondary mt-3">Retour à la page principale</a>
+                <!-- Button to return to the main page -->
+                <a href="index.html" class="btn btn-secondary mt-3">Back to Main Page</a>
             </div>
         </div>
     </div>
@@ -78,35 +110,35 @@
     gsap.from("header", { duration: 1.5, opacity: 0, y: -50 });
 </script>
 
-<!-- JavaScript pour le comportement dépendant du contexte -->
+<!-- JavaScript for context-dependent behavior -->
 <script>
     function updateContextualComponent() {
         const component = document.getElementById('contextual-component');
         const screenWidth = window.innerWidth;
 
-        // Effacer le contenu précédent du composant
+        // Clear previous content of the component
         component.innerHTML = '';
 
-        // Contexte pour ordinateur (écran large)
+        // Context for desktop (large screen)
         if (screenWidth > 768) {
             component.innerHTML = `
-                    <label for="desktop-option">Option spécifique pour ordinateur :</label>
+                    <label for="desktop-option">Desktop-specific option:</label>
                     <select id="desktop-option" class="form-control">
                         <option value="option1">Option 1</option>
                         <option value="option2">Option 2</option>
                     </select>
                 `;
         }
-        // Contexte pour mobile (écran étroit)
+        // Context for mobile (small screen)
         else {
             component.innerHTML = `
-                    <label for="mobile-option">Entrée spécifique pour mobile :</label>
-                    <input type="text" id="mobile-option" class="form-control" placeholder="Entrez une valeur mobile">
+                    <label for="mobile-option">Mobile-specific input:</label>
+                    <input type="text" id="mobile-option" class="form-control" placeholder="Enter a mobile value">
                 `;
         }
     }
 
-    // Mettre à jour le composant lorsque la page charge et lorsque la fenêtre est redimensionnée
+    // Update the component when the page loads and when the window is resized
     window.addEventListener('load', updateContextualComponent);
     window.addEventListener('resize', updateContextualComponent);
 </script>
