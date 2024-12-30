@@ -22,7 +22,7 @@
         }
 
         header {
-            background: linear-gradient(135deg, #007bff, #6c757d);
+            background: linear-gradient(135deg, #ff0019, #1b1416);
             color: #fff;
             padding: 50px 0;
         }
@@ -59,13 +59,13 @@
     <div class="row justify-content-center mb-5">
         <div class="col-md-6" data-aos="fade-right">
             <div class="card p-4">
-                <h2 class="mb-3">Example 1: Interactive Quiz with Defects</h2>
+                <h2 class="mb-3">Example 1</h2>
                 <form id="quiz-form">
                     <div class="mb-3">
-                        <label>What is the color of the sky on a clear day?</label><br>
+                        <label>What is the color of GOMYCODE Logo?</label><br>
                         <!-- Defect: Incorrect answer pre-selected -->
-                        <input type="radio" name="q1" value="Red" checked> Red<br>
-                        <input type="radio" name="q1" value="Blue"> Blue<br>
+                        <input type="radio" name="q1" value="Black" checked> black<br>
+                        <input type="radio" name="q1" value="yellow"> yellow<br>
                         <input type="radio" name="q1" value="Green"> Green<br>
                         <input type="radio" name="q1" value="Black"> Black
                     </div>
@@ -95,8 +95,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8" data-aos="fade-left">
             <div class="card p-4">
-                <h2 class="mb-3">Example 2: Testing Defective Code</h2>
-                <p>Enter two numbers to check their sum:</p>
+                <h2 class="mb-3">Example 2: </h2>
+                <p>Enter two numbers to check their Sum:</p>
                 <form id="code-test-form">
                     <div class="mb-3">
                         <label for="num1">Number 1:</label>
@@ -121,7 +121,7 @@
 </section>
 
 <footer class="text-center p-4 mt-5">
-    <p>&copy; 2025 GoMyCode. All rights reserved.</p>
+    <p>&copy; 2025 GoMyCode.</p>
 </footer>
 
 <!-- Bootstrap JS -->
@@ -149,8 +149,8 @@
             resultat.style.color = "red";
         } else {
             // Defect: Incorrect calculation (adds +1 to the result)
-            resultat.textContent = `Sum result: ${num1 + num2 + 1}`;
-            resultat.style.color = "green";
+            resultat.textContent = `Sum result: ${num1 * num2}`;
+            resultat.style.color = "RED";
         }
     }
 </script>
